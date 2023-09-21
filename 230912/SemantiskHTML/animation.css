@@ -1,0 +1,25 @@
+@keyframes rotate {
+    0%{
+        rotate:45deg;
+        background-color:purple;
+    }
+    50%{
+        rotate:360deg;
+        background-color:rgb(54, 202, 9);
+        box-shadow: 0px 0px 2px 5px rgba(0, 0, 0, 0.276);
+        z-index:2;
+        border-radius: 50%;
+    }
+    100%{
+        rotate:45deg;
+        background-color:purple;
+    }
+}
+
+li:hover{
+    transform: translatex(-3px);
+    transition: 0.3s ease-in-out;
+}
+.filled:hover{
+    animation: rotate 1s ease-in-out;
+}

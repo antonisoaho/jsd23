@@ -1,0 +1,35 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.menu {
+  margin: 2rem;
+  display: flex;
+  width: auto;
+  height: 3rem;
+  align-items: center;
+  background-color: lightgray;
+  justify-content: flex-end;
+}
+
+.option {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.logo {
+  height: 90%;
+  margin-right: auto;
+  margin-left: 1rem;
+}
+
+.option:hover {
+  background-color: gray;
+  color: whitesmoke;
+  transition-duration: 0.3s;
+}

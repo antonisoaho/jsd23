@@ -1,0 +1,95 @@
+/* Utility Classes */
+
+.animate {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+.animate.animate--fast {
+  animation-duration: 0.5s;
+}
+.animate.transition--smooth {
+  transition: transform 0.3s;
+}
+
+/* Animations */
+
+@keyframes slideInLeft {
+  from {
+    transform: translatex(-50rem);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: translatey(68px);
+  }
+  to {
+    transform: translatey(0);
+  }
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(0%);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translatey(-90px);
+  }
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translatey(0);
+  }
+
+  40% {
+    transform: translatey(-30px);
+  }
+
+  60% {
+    transform: translatey(-15px);
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotateY(45deg);
+  }
+  to {
+    transform: rotateY(225deg);
+  }
+}
+
+.scaling {
+  animation-name: scaling;
+}
+.bounce {
+  animation-name: bounce;
+}
+.slideInLeft {
+  animation-name: slideInLeft;
+  animation-timing-function: ease-in;
+}
+
+.slideFromBottom {
+  animation-name: slideFromBottom;
+  animation-timing-function: ease-in;
+}
+
+li:hover {
+  transform: translatex(-4px);
+}
+
+.page-icon {
+  transform: rotatey(45deg);
+  animation: rotateAnimation 2s linear 1s infinite, slideInLeft 1s;
+}

@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@200;300;400&family=Roboto+Slab:wght@300&family=Roboto:wght@100&family=Spicy+Rice&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  background: rgb(215, 228, 159);
+  background: linear-gradient(
+    180deg,
+    rgba(215, 228, 159, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  background-repeat: no-repeat;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 1rem;
+  top: 0rem;
+  width: 2.5rem;
+  height: 100vh;
+}
+
+.sidebar a {
+  width: auto;
+  border-radius: 50%;
+  margin: 0.2rem;
+  transition-duration: 0.4s;
+}
+.sidebar a:first-child {
+  margin-top: 4rem;
+}
+
+.sidebar a:last-child {
+  margin-top: auto;
+  margin-bottom: 3rem;
+}
+.sidebar a img {
+  width: 100%;
+  opacity: 60%;
+}
+
+.sidebar a:hover {
+  transform: translatey(-0.4rem);
+  transition-duration: 0.3s;
+  rotate: 5deg;
+}
+.sidebar a:nth-child(even):hover {
+  rotate: -5deg;
+}
+main img {
+  width: 60%;
+  border-radius: 1rem;
+  box-shadow: 0rem 0rem 0.6rem 0.1rem rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0rem 0rem 0.6rem 0.1rem rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0rem 0rem 0.6rem 0.1rem rgba(0, 0, 0, 0.75);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 4rem;
+  padding: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.2px);
+  -webkit-backdrop-filter: blur(2.2px);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+main {
+  user-select: none;
+}
+
+main p {
+  padding: 0rem 3rem;
+}
+
+main ul {
+  list-style: none;
+}
+.pictureGallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+}
+
+.pictureGallery li {
+  margin: 0.3rem;
+  max-width: 100%;
+  object-fit: contain;
+  height: 22vh;
+}
+
+.pictureGallery li a .pic {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: contain;
+  border-radius: 30%;
+  filter: blur(0.2rem);
+  transition-duration: 0.7s;
+  vertical-align: bottom;
+}
+
+.pictureGallery li a .pic:hover {
+  border-radius: 0.5rem;
+  filter: none;
+  transition-duration: 0.3s;
+  border: solid 0.07rem rgba(245, 245, 245, 0.452);
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .container {
+    max-width: 475px;
+  }
+  .pictureGallery li {
+    height: 22vh;
+  }
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+  .pictureGallery li {
+    height: 35vh;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+  .pictureGallery li {
+    height: 40vh;
+  }
+}
+
+/* la */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+  main img {
+    width: 460px;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+  main img {
+    width: 460px;
+  }
+  .pictureGallery li {
+    height: 50vh;
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+  main img {
+    width: 460px;
+  }
+}

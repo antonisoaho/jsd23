@@ -1,0 +1,73 @@
+body {
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #ffffff 0%, #636262 74%);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  background-color: rgba(199, 191, 176, 0.705);
+  border-bottom: solid black;
+  border-bottom-width: 1px;
+}
+
+.getPicBackground {
+  display: flex;
+  width: 400px;
+  height: 80px;
+  background-image: url(Pictures/parchment.png);
+  background-repeat: no-repeat;
+  background-size: 330px 80px;
+  background-position: center center;
+  background-clip: content-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.headertext {
+  font-family: "Monotype Corsiva";
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.688);
+}
+
+h2 {
+  font-size: 17px;
+  font-style: oblique;
+}
+.writtenBy {
+  font-size: 13px;
+}
+.container {
+  background-image: url(Pictures/OLD_PAPER_TEXTURE.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  font-family: "Roboto", sans-serif;
+  border: solid 1px;
+  border-color: antiquewhite;
+  margin: 1rem;
+  border-radius: 1px;
+  box-shadow: 0px 0px 5px 2px rgb(180, 180, 180);
+}
+.articleheader {
+  font-weight: bolder;
+  font-size: 35px;
+}
+p {
+  font-weight: bold;
+}
+footer {
+  font-family: "Roboto", sans-serif;
+  font-size: small;
+  background-color: rgba(59, 56, 59, 0.089);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+  margin-right: 10px;
+  text-align: right;
+}

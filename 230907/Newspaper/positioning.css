@@ -1,0 +1,49 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.body--container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 10px;
+  max-width: 100rem;
+  align-self: center;
+}
+
+.stickyheader {
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  z-index: 1;
+}
+
+.stickyfooter {
+  position: sticky;
+  margin-top: auto;
+  bottom: 0;
+  display: flex;
+  justify-content: right;
+}
+
+article {
+  padding: 1rem;
+}
+
+.item {
+  text-align: center;
+}
+
+.page-icon {
+  margin-left: auto;
+  max-width: 3rem;
+  max-height: 3rem;
+}

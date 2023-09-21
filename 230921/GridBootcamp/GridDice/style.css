@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.dices {
+  display: grid;
+  max-width: 80%;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+  margin: 5rem auto;
+
+  /* Can have media query here */
+}
+
+.dice {
+  border: 3px solid black;
+  border-radius: 1rem;
+  max-width: 12em;
+  width: 100%;
+  aspect-ratio: 1/1;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.dot {
+  border-radius: 50%;
+  background-color: black;
+  margin: 9%;
+}
+
+.dice:nth-child(1) > .dot {
+  grid-column: 3 / 3;
+  grid-row: 3 / 3;
+}
+
+.dice:nth-child(n + 2) > .dot:nth-child(1) {
+  grid-column: 2 / 2;
+  grid-row: 2 / 2;
+}
+
+.dice:nth-child(n + 2) > .dot:nth-child(2) {
+  grid-column: 4/4;
+  grid-row: 4/ 4;
+}
+
+.dice:nth-child(n + 3):nth-child(odd) > .dot:nth-child(3) {
+  grid-column: 3/3;
+  grid-row: 3/3;
+}
+
+.dice:nth-child(even) > .dot:nth-child(3) {
+  grid-column: 4/4;
+  grid-row: 2/2;
+}
+
+.dot:nth-child(4) {
+  grid-column: 2/2;
+  grid-row: 4/4;
+}
+
+.dice:nth-child(5) > .dot:nth-child(5) {
+  grid-column: 4/4;
+  grid-row: 2/2;
+}
+
+.dice:nth-child(6) > .dot:nth-child(5) {
+  grid-column: 4/4;
+  grid-row: 3/3;
+}
+
+.dice:nth-child(6) > .dot:nth-child(6) {
+  grid-column: 2/2;
+  grid-row: 3/3;
+}

@@ -1,0 +1,88 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30rem;
+  width: 20rem;
+  -webkit-box-shadow: -0px 0px 2px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -0px 0px 2px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: -0px 0px 2px 1px rgba(0, 0, 0, 0.75);
+}
+
+img {
+  border-radius: 50%;
+  height: 9rem;
+  width: 9rem;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  height: 55%;
+}
+.close-button {
+  position: relative;
+  margin-left: auto;
+  margin-right: 1rem;
+  margin-bottom: auto;
+  margin-top: 1rem;
+  color: grey;
+  background-color: whitesmoke;
+  border: none;
+}
+
+.readmore {
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  background-color: darkslategray;
+  border: none;
+  width: 80%;
+}
+.moremore {
+  padding: 1.5rem;
+  color: whitesmoke;
+}
+h1 {
+  text-align: center;
+  letter-spacing: -2px;
+  line-height: 0.6;
+  margin-bottom: 1px;
+}
+h2 {
+  text-align: center;
+  letter-spacing: -1px;
+  line-height: 0.6;
+  color: rgba(34, 31, 28, 0.479);
+}
+span {
+  font-size: 1.2rem;
+}
+.close {
+  font-size: 2rem;
+}

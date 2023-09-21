@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anton Isoaho</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="flex-container">
+      <h1>Anton Isoaho</h1>
+      <h2>29 år</h2>
+      <div class="myImages">
+        <img src="Assets/me.jpg" alt="picture of me" />
+      </div>
+    </div>
+
+    <div class="flex-container">
+      <p>
+        <b
+          >Välj info att se:
+          <select id="showInfo" onchange="getValue()">
+            <option value="0" selected="selected"></option>
+            <option value="1">Utbildning</option>
+            <option value="2">Jobb</option>
+            <option value="3">Familj</option>
+            <option value="4">Intressen</option>
+          </select>
+        </b>
+      </p>
+    </div>
+
+    <div id="results" class="flex-container">
+      <div id="0"></div>
+      <div id="1">
+        <p>
+          <b>
+            Jag studerade Teknik med inriktning på CNC under min gymnasieperiod,
+            efter det har jag inte studerat något mer.
+          </b>
+        </p>
+      </div>
+      <div id="2">
+        <p>
+          <b>
+            Jag gjorde min sista dag på mitt förra jobb Fredagen precis innan
+            denna utbildning startade, där jobbade jag som Supply Chain Analyst
+            med specialinriktning på att bygga upp filer till produktion.
+            <br /><br />
+            Just nu jobbar jag 20% som Programutvecklare på ett företag som
+            heter Capfor.
+          </b>
+        </p>
+      </div>
+      <div id="3">
+        <p>
+          <b>
+            Jag har fru och två barn. Vi stationerar oss i ett hus lite utanför
+            Vargön.
+            <br />
+            Då det är tre tjejer och jag i familjen så har man inte så mycket
+            att säga till om...
+          </b>
+        </p>
+      </div>
+      <div id="4">
+        <p>
+          <b>
+            På fritiden spelar jag innebandy och cyklar.
+            <br />
+            Tiden som jag inte tränar umgås jag så mycket jag kan med familjen,
+            men när barnen lagt sig så har jag inte särskilt svårt för att hoppa
+            in på datorn.
+          </b>
+        </p>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@200;300&family=Roboto:wght@100&display=swap");
+}
+
+body {
+  background-color: azure;
+  font-family: roboto;
+  padding: 5px;
+}
+
+h1 {
+  color: navy;
+  font-family: poppins;
+  margin-bottom: -20px;
+}
+
+#results {
+  display: none;
+}
+.flex-container {
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  width: 95%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 15px;
+  border-width: 2px;
+  border-style: solid;
+  background-color: rgb(177, 235, 215);
+  margin-bottom: 10px;
+}
+.myImages {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+img {
+  max-width: 100%;
+  min-width: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+#results > div {
+  display: none;
+}
