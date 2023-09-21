@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  width: 100vh;
+  grid-template-columns: repeat(autofit, minmax(10em, 1fr));
+  grid-template-rows: auto;
+  margin: 1em auto;
+}
+
+header {
+  background-color: azure;
+}
+nav {
+  background-color: aliceblue;
+}
+main {
+  background-color: antiquewhite;
+}
+aside {
+  background-color: beige;
+}
+footer {
+  background-color: blanchedalmond;
+}
