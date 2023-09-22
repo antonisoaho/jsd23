@@ -97,7 +97,6 @@ footer {
 @media (max-width: 40em) {
   body {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
   }
 
   .sidearticle {
@@ -109,6 +108,8 @@ footer {
   }
   .imagecontainer {
     grid-template-columns: 1fr 1fr;
+    grid-row: span 28;
+    grid-template-rows: 10rem;
   }
   .image {
     height: 10rem;
