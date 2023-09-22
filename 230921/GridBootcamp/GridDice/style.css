@@ -15,8 +15,6 @@ body {
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
   margin: 5rem auto;
-
-  /* Can have media query here */
 }
 
 .dice {
