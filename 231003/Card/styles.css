@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --pageBg: rgb(238, 238, 238);
+  --whiteClr: rgb(255, 255, 255);
+  --cardHdrBtn: rgb(65, 47, 255);
+  --orderInfoBg: rgb(247, 247, 247);
+  --ballClr: rgb(226, 226, 226);
+  --txtClr: rgb(145, 145, 145);
+  --itemWidth: 341px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Encode Sans", sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: var(--pageBg);
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 437px;
+  height: 738px;
+  background-color: var(--whiteClr);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  /* position: relative; */
+}
+
+.cardHeader {
+  background-color: var(--cardHdrBtn);
+  width: 100%;
+  height: 246px;
+  display: flex;
+  justify-content: center;
+  /* position: absolute; */
+  margin-bottom: 36px;
+}
+
+.orderInfo {
+  width: 341px;
+  height: 104px;
+  margin: 33px 48px;
+  background-color: var(--orderInfoBg);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.completeOrder {
+  width: 341px;
+  height: 68px;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--cardHdrBtn);
+}
+
+.roundBall {
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ballClr);
+}
+
+.roundBall img {
+  opacity: 50%;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.breadTxt {
+  margin: 0px 48px;
+}
+
+p {
+  color: var(--txtClr);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.7rem;
+  letter-spacing: 0.02em;
+}
+
+a {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.typeCost h4 {
+  font-weight: 900;
+}
+
+.typeCost p {
+  text-align: left;
+}
+.completeOrder h2 {
+  color: var(--whiteClr);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cnlOrd {
+  margin-top: 42px;
+}
