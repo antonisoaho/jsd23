@@ -26,7 +26,7 @@ body {
   align-items: center;
 }
 
-.wrapper {
+.container {
   width: 437px;
   height: 738px;
   background-color: var(--whiteClr);
@@ -38,7 +38,7 @@ body {
   /* position: relative; */
 }
 
-.cardHeader {
+.container__header {
   background-color: var(--cardHdrBtn);
   width: 100%;
   height: 246px;

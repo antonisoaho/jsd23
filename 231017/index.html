@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      width: 100vw;
+    }
+    .container {
+      margin: 2rem auto;
+      width: 900px;
+      height: 800px;
+      display: flex;
+      justify-content: center;
+      border: 2px solid blue;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .input-container {
+      width: 890px;
+      height: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 2px;
+    }
+    .input {
+      width: 4rem;
+    }
+    .btn {
+      background-color: #c3c3c3;
+      border: 1px solid;
+      height: 3rem;
+      width: 8rem;
+      cursor: pointer;
+      transition: 0.1s;
+    }
+    .btn:hover {
+      background-color: gainsboro;
+    }
+    .btn:active {
+      background-color: white;
+    }
+  </style>
+  <!-- sten sax påse -->
+  <!-- Fizz 3 buzz 5 fizzbuzz 3 och 5 -->
+  <body>
+    <div class="container">
+      <div class="input-container">
+        <input type="number" class="input" id="playerNumber" />
+        <button class="btn" onclick="randomHand()">Sten,sax & påse</button>
+        <button class="btn" onclick="getWeekday()">Veckodag</button>
+        <button class="btn" onclick="getMonth()">Månad</button>
+        <button class="btn" onclick="oddEven()">OddOrEven</button>
+      </div>
+      <div class="output-container" id="result"></div>
+    </div>
+    <script>
+      function showSign() {
+        const hand = ["rock", "paper", "scissor"];
+
+        return hand[Math.floor(Math.random() * 3)];
+      }
+
+      function compareHands(player1Hand, player2Hand) {
+        const rules = {
+          rock: { beats: "scissor" },
+          paper: { beats: "rock" },
+          scissor: { beats: "paper" },
+        };
+
+        if (player1Hand === player2Hand) {
+          return "Draw!";
+        } else if (rules[player1Hand].beats === player2Hand) {
+          return "Player 1 point.";
+        } else if (rules[player2Hand].beats === player1Hand) {
+          return "Player 2 point.";
+        }
+      }
+
+      function randomHand() {
+        const players = 2;
+        let playerHands = [];
+        let playerScore = [0, 0];
+        let roundCounter = 1;
+
+        while (playerScore[0] < 3 && playerScore[1] < 3) {
+          for (p = 0; p < players; p++) {
+            playerHands[p] = showSign();
+          }
+
+          const result = compareHands(playerHands[0], playerHands[1]);
+
+          if (result === "Player 1 point.") {
+            playerScore[0]++;
+          } else if (result === "Player 2 point.") {
+            playerScore[1]++;
+          }
+          roundCounter++;
+          playerHands = [];
+        }
+        console.log(`${playerScore[0]} | ${playerScore[1]}`);
+        const resultBox = document.getElementById("result");
+        resultBox.innerHTML =
+          playerScore[0] > playerScore[1]
+            ? `Spelare 1 vann efter ${roundCounter} rundor.`
+            : `Spelare 2 vann efter ${roundCounter} rundor.`;
+      }
+
+      function getWeekday() {
+        let userInput;
+        let weekDay;
+        const daysOfWeek = [
+          "Månens dag",
+          "Tidens dag",
+          "Odens Dag",
+          "Åskgudens dag",
+          "Fredens dag",
+          "Godisets dag",
+          "Syndens dag",
+        ];
+
+        do {
+          userInput = prompt("Välj en veckodag mellan 1-7!");
+          userInput = parseInt(userInput);
+
+          if (isNaN(userInput) || userInput > 7 || userInput < 0) {
+            alert("False - Try again.");
+          } else {
+            weekDay = daysOfWeek[userInput - 1];
+          }
+        } while (isNaN(userInput) || userInput > 7 || userInput < 0);
+
+        const resultBox = document.getElementById("result");
+        resultBox.innerHTML = weekDay;
+      }
+
+      function oddEven() {
+        do {
+          userInput = prompt("Välj ett nummer.");
+        } while (isNaN(userInput));
+        let oddOrEven = userInput % 2 === 0 ? "Even" : "Odd";
+
+        const resultBox = document.getElementById("result");
+        resultBox.innerHTML = oddOrEven;
+      }
+    </script>
+  </body>
+</html>

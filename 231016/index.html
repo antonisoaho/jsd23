@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice-games</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      min-height: 100vh;
+      min-width: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      width: 800px;
+      height: calc(fit-content + 4rem);
+      border: 2px solid;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+    }
+    .btn-container {
+      display: flex;
+      top: 1px;
+      justify-content: space-evenly;
+      width: 100%;
+      margin: 3px;
+    }
+    #players {
+      width: 80px;
+      font-size: 2.5rem;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .btn {
+      width: 150px;
+      height: 80px;
+      background-color: orange;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+      position: relative;
+      font-size: 1rem;
+    }
+    #result {
+      display: flex;
+      flex: column wrap;
+      height: auto;
+    }
+    .btn:hover {
+      background-color: rgb(184, 122, 8);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="btn-container">
+        <input type="number" id="players" min="1" max="10" />
+        <button class="btn" onclick="diceLadder()">DiceLadder</button>
+        <button class="btn" onclick="knockOut(7,3)">KnockOut</button>
+        <button class="btn" onclick="toBoston()">Going to Boston</button>
+        <button class="btn" onclick="fizzBuzz()">Fizz Buzz</button>
+        <button class="btn" onclick="highLow()">High Or Low</button>
+      </div>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      const playerAmount = document.getElementById("players");
+      playerAmount.value = 1;
+
+      function rollDice() {
+        return Math.ceil(Math.random() * 6);
+      }
+
+      function getPlayers() {
+        return document.getElementById("players").value;
+      }
+
+      function diceLadder() {
+        const ladder = [1, 2, 3, 4, 5];
+        let currentStep = 0;
+        let rolls = 0;
+
+        while (currentStep < ladder.length) {
+          const rollResult = rollDice();
+          rolls++;
+
+          if (rollResult === ladder[currentStep]) {
+            currentStep++;
+          }
+        }
+
+        const resultBox = document.getElementById("result");
+        resultBox.innerHTML = `It only took <u>${rolls}</u> rolls.`;
+      }
+
+      function knockOut(knockNumber, playingRounds) {
+        const players = getPlayers();
+
+        const resultBox = document.getElementById("result");
+
+        let result = 0;
+        const playerScore = [];
+        const playerKnockouts = [];
+
+        for (let p = 0; p < players; p++) {
+          let knocked = 0;
+
+          for (let i = 0; i < playingRounds; i++) {
+            let diceOne = rollDice();
+            let diceTwo = rollDice();
+            let rolled = diceOne + diceTwo;
+
+            if (rolled === knockNumber) {
+              result -= rolled;
+              knocked++;
+            } else {
+              result += rolled;
+            }
+          }
+
+          playerScore.push({ player: p, score: result });
+
+          let resultText = `After ${playingRounds} rounds, <br> the Final score is: <br>`;
+          playerScore.forEach((player) => {
+            resultText += `Player ${player.player + 1}: ${player.score} <br>`;
+
+            resultBox.innerHTML = resultText;
+          });
+        }
+      }
+
+      function toBoston() {
+        const players = getPlayers();
+
+        const resultBox = document.getElementById("result");
+        const playerScore = [];
+
+        for (let p = 0; p < players; p++) {
+          let totalScore = 0;
+
+          for (game = 0; game < 3; game++) {
+            let maxRoll = 0;
+
+            for (roll = 0; roll < 3; roll++) {
+              let diceRoll = rollDice();
+              if (diceRoll > maxRoll) {
+                maxRoll = diceRoll;
+              }
+            }
+            totalScore += maxRoll;
+          }
+          playerScore.push({ player: p, result: totalScore });
+        }
+
+        let resultText = `Nicely played, score for each player is:<br>`;
+        playerScore.forEach((player) => {
+          resultText += `Player ${player.player + 1}: ${player.result} <br>`;
+        });
+        resultBox.innerHTML = resultText;
+      }
+
+      function fizzBuzz() {
+        let startNumber = prompt("Välj startnummer!");
+        startNumber = parseInt(startNumber);
+        while (isNaN(startNumber)) {
+          startNumber = prompt("Välj ett heltal.");
+          startNumber = parseInt(startNumber);
+        }
+        let endNumber = startNumber + 100;
+
+        let resultString;
+        let counter = 1;
+
+        for (let i = startNumber; i < endNumber; i++) {
+          let printString = "";
+
+          printString += i % 3 === 0 ? "Fizz" : "";
+          printString += i % 5 === 0 ? "Buzz" : "";
+
+          resultString +=
+            printString.length > 3 ? `${i}: ${printString} <br>` : "";
+        }
+        const resultBox = document.getElementById("result");
+        resultBox.innerHTML = resultString;
+      }
+
+      function highLow() {
+        let guessNumber = Math.ceil(Math.random() * 100);
+        let counter = 0;
+        const resultBox = document.getElementById("result");
+
+        let guess = prompt("Gissa ett nummer mellan 1-100!");
+        while (guess != guessNumber) {
+          counter++;
+          if (guess > guessNumber) {
+            guess = prompt(
+              `Du gissade lite för högt med din gissning på ${guess}.`
+            );
+          } else {
+            guess = prompt(
+              `Du gissade lite för lågt med din gissning på ${guess}.`
+            );
+          }
+        }
+        resultBox.innerHTML = `Snyggt, du lyckades gissa rätt på försök nummer ${counter}!`;
+      }
+    </script>
+  </body>
+</html>
