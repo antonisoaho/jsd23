@@ -57,9 +57,9 @@
     <div class="container">
       <div class="input-container">
         <input type="number" class="input" id="playerNumber" />
-        <button class="btn" onclick="randomHand()">Sten,sax & påse</button>
+        <button class="btn" onclick="rockPaper()">Sten,sax & påse</button>
         <button class="btn" onclick="getWeekday()">Veckodag</button>
-        <button class="btn" onclick="getMonth()">Månad</button>
+        <button class="btn" onclick="toDo()">To Do</button>
         <button class="btn" onclick="oddEven()">OddOrEven</button>
       </div>
       <div class="output-container" id="result"></div>
@@ -87,7 +87,7 @@
         }
       }
 
-      function randomHand() {
+      function rockPaper() {
         const players = 2;
         let playerHands = [];
         let playerScore = [0, 0];
@@ -152,6 +152,51 @@
 
         const resultBox = document.getElementById("result");
         resultBox.innerHTML = oddOrEven;
+      }
+
+      const listedToDo = [];
+
+      function addToDo(whatToAdd) {
+        listedToDo.push(whatToAdd);
+
+        return listedToDo;
+      }
+
+      function removeToDo(whatToRemove) {
+        let index = listedToDo.indexOf(whatToRemove);
+        if (index !== -1) {
+          listedToDo.splice(index, 1);
+        }
+        return listedToDo;
+      }
+
+      function printToDoList() {
+        const result = document.getElementById("result");
+        result.innerHTML = "<h3>ToDo-lista:</h3><ul>";
+
+        listedToDo.forEach((task) => {
+          result.innerHTML += `<li>${task}</li>`;
+        });
+        result.innerHTML += "</ul>";
+      }
+
+      function toDo() {
+        let userInput;
+        printToDoList();
+
+        do {
+          userInput = prompt("Vad vill du göra?\nAdd\nRem");
+        } while (userInput !== "add" && userInput !== "rem");
+
+        if (userInput == "rem") {
+          const taskToRemove = prompt("Vilken vill du ta bort?");
+          removeToDo(taskToRemove);
+        } else if (userInput == "add") {
+          const taskToAdd = prompt("Vad vill du lägga in i din ToDo?");
+          addToDo(taskToAdd);
+        }
+
+        printToDoList();
       }
     </script>
   </body>
