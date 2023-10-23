@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miniräknare</title>
+  </head>
+  <style>
+    body {
+      width: 400px;
+      height: 400px;
+      border: 1px solid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      text-align: center;
+    }
+    input {
+      width: 90%;
+      height: 45px;
+    }
+    .btn-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      justify-content: center;
+    }
+    button {
+      width: 90px;
+      height: 45px;
+    }
+  </style>
+  <body>
+    <h1>Majnirejknare</h1>
+    <input id="display" type="text" />
+    <br />
+    <div class="btn-container">
+      <button onclick="pushDisplay('1')">1</button>
+      <button onclick="pushDisplay('2')">2</button>
+      <button onclick="pushDisplay('3')">3</button>
+      <button onclick="pushDisplay('+')">+</button>
+
+      <button onclick="pushDisplay('4')">4</button>
+      <button onclick="pushDisplay('5')">5</button>
+      <button onclick="pushDisplay('6')">6</button>
+      <button onclick="pushDisplay('-')">-</button>
+
+      <button onclick="pushDisplay('7')">7</button>
+      <button onclick="pushDisplay('8')">8</button>
+      <button onclick="pushDisplay('9')">9</button>
+      <button onclick="pushDisplay('*')">*</button>
+
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="pushDisplay('0')">0</button>
+      <button onclick="calculateResult()">=</button>
+      <button onclick="pushDisplay('/')">/</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
