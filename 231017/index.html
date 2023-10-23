@@ -60,7 +60,7 @@
         <button class="btn" onclick="rockPaper()">Sten,sax & påse</button>
         <button class="btn" onclick="getWeekday()">Veckodag</button>
         <button class="btn" onclick="toDo()">To Do</button>
-        <button class="btn" onclick="oddEven()">OddOrEven</button>
+        <button class="btn" onclick="factorialSum(10)">Factorial</button>
       </div>
       <div class="output-container" id="result"></div>
     </div>
@@ -144,60 +144,59 @@
         resultBox.innerHTML = weekDay;
       }
 
-      function oddEven() {
-        do {
-          userInput = prompt("Välj ett nummer.");
-        } while (isNaN(userInput));
-        let oddOrEven = userInput % 2 === 0 ? "Even" : "Odd";
-
-        const resultBox = document.getElementById("result");
-        resultBox.innerHTML = oddOrEven;
-      }
-
       const listedToDo = [];
 
-      function addToDo(whatToAdd) {
+      const addToDo = (whatToAdd) => {
         listedToDo.push(whatToAdd);
-
         return listedToDo;
-      }
+      };
 
-      function removeToDo(whatToRemove) {
-        let index = listedToDo.indexOf(whatToRemove);
-        if (index !== -1) {
-          listedToDo.splice(index, 1);
+      const removeToDo = (whatToRemove) => {
+        const remove = listedToDo.indexOf(whatToRemove);
+        if (remove !== -1) {
+          listedToDo.splice(remove, 1);
+        } else {
+          alert("Det du försökte ta bort fanns inte...");
         }
         return listedToDo;
-      }
+      };
 
-      function printToDoList() {
+      const printToDoList = () => {
         const result = document.getElementById("result");
         result.innerHTML = "<h3>ToDo-lista:</h3><ul>";
 
         listedToDo.forEach((task) => {
           result.innerHTML += `<li>${task}</li>`;
         });
-        result.innerHTML += "</ul>";
-      }
 
-      function toDo() {
+        result.innerHTML += "</ul>";
+      };
+
+      const toDo = () => {
         let userInput;
-        printToDoList();
 
         do {
-          userInput = prompt("Vad vill du göra?\nAdd\nRem");
-        } while (userInput !== "add" && userInput !== "rem");
+          userInput = prompt("Vad vill du göra?\nAdd\nRem\nSee").toLowerCase();
+        } while (
+          userInput !== "add" &&
+          userInput !== "rem" &&
+          userInput !== "see"
+        );
 
         if (userInput == "rem") {
-          const taskToRemove = prompt("Vilken vill du ta bort?");
+          const taskToRemove = prompt(
+            "Vad vill du ta bort från din DoTO?"
+          ).toLowerCase();
           removeToDo(taskToRemove);
         } else if (userInput == "add") {
-          const taskToAdd = prompt("Vad vill du lägga in i din ToDo?");
+          const taskToAdd = prompt(
+            "Vad vill du lägga in i din ToDo?"
+          ).toLowerCase();
           addToDo(taskToAdd);
         }
 
         printToDoList();
-      }
+      };
     </script>
   </body>
 </html>
