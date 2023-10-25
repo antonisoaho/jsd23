@@ -22,6 +22,14 @@ const bookArr = [
   },
 ];
 
+const titleFinder = (titleName) => {
+  let resultBook = bookArr.filter(
+    (book) => book.title.toLowerCase() === titleName.toLowerCase()
+  );
+  return resultBook ? resultBook : null;
+};
+let resultBook = titleFinder("Harry P");
+
 function findBook(title, bookArray) {
   for (let t = 0; t < bookArray.length; t++) {
     if (bookArray[t].title === title) {
@@ -35,16 +43,19 @@ const bookInfo = findBook("Harry P", bookArr);
 
 // console.log(bookInfo);
 
-let str = "hello";
+let str = "Vi GiLlAr";
 const strObj = {};
 
 const letterFrequency = (str) => {
+  str = str.toLowerCase();
+
   return str.split("").reduce((total, letter) => {
     total[letter] ? total[letter]++ : (total[letter] = 1);
     return total;
   }, {});
 };
-// console.log(letterFrequency(str));
+
+console.log(letterFrequency(str));
 
 const users = [
   {
@@ -975,3 +986,4 @@ const reformatEmails = (users) => {
 };
 
 console.log(reformatEmails(users));
+console.log(resultBook);
